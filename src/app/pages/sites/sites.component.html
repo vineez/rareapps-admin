@@ -1,0 +1,98 @@
+<div>
+    <div class="mb-5 d-flex align-items-center">
+        <div>
+            <h2>Sites</h2>              
+        </div>
+        <div class="ms-auto">
+            <button class="btn btn-sm btn-dark" data-toggle="modal" data-target="#addNotionModal">
+                Add Sites
+              </button>
+        </div>                  
+    </div>
+    <div class="card mb-5 shadow-4-hover">
+        <div class="card-body">                  
+            <div class="row g-5">
+                <div class="col-12">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h6 routerLink ="site-view">Art Station Online</h6>
+                            <div class="mt-sm-1 d-flex align-items-center">
+                                <a class="text-sm text-heading text-primary-hover">https://mydomain.com</a>
+                                <span class="material-symbols-outlined text-muted text-lg">
+                                    content_copy
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ms-auto" data-toggle="modal" data-target="#addNotionModal">
+                            <div class="icon icon-shape text-lg rounded-circle">
+                                <span class="material-symbols-outlined" style="cursor:pointer;">
+                                    more_horiz
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="card mb-5 shadow-4-hover">
+        <div class="card-body">                  
+            <div class="row g-5">
+                <div class="col-12">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h6 routerLink ="site-view">Multibrand store information website</h6>
+                            <div class="mt-sm-1 d-flex align-items-center">
+                                <a class="text-sm text-heading text-primary-hover">https://mydomain.com/123456</a>
+                                <span class="material-symbols-outlined text-muted text-lg">
+                                    content_copy
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ms-auto" data-toggle="modal" data-target="#addNotionModal">
+                            <div class="icon icon-shape text-lg rounded-circle">
+                                <span class="material-symbols-outlined" style="cursor:pointer;">
+                                    more_horiz
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+  
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="addNotionModal" tabindex="-1" role="dialog" aria-labelledby="addNotionModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="addNotionModalLabel">Add a Notion Site</h3>          
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-5">
+                  <label class="form-label" for="email">Add 'share to web' link of your Notion page</label>
+                  <input type="text" class="form-control" id="email" placeholder="">
+                </div>
+                <div class="mb-5">
+                  <label class="form-label" for="password">Choose sub-domain</label>
+                  <div class="input-group position-relative">
+                    <input type="text" class="form-control" aria-label="Choose email" aria-describedby="">
+                    <span class="input-group-text" id="">.rareapps.xyz</span>
+                  </div>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">          
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Add Notion Site</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Ends -->

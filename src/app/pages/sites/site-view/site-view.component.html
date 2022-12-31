@@ -1,0 +1,268 @@
+<div>
+    <!-- <div class="mb-5 d-flex align-items-center">
+        <div>
+            <h2>Access Control</h2>  
+            <h6 class="text-sm text-heading text-primary-hover" style="font-weight: 100;">Sites / Art Station Online / Access Control</h6>            
+        </div>
+        <div class="ms-auto">
+            <button class="btn btn-sm btn-dark" (click)="isView=false">
+                Enable login for a page
+              </button>
+        </div>  
+                     
+    </div> -->
+    <div class="mb-5 row">
+        <div class="col-12 col-sm-12 col-md-6 mb-5 mb-sm-5">
+            <h2>Access Control</h2>  
+            <h6 class="text-sm text-heading text-primary-hover" style="font-weight: 100;">Sites / Art Station Online / Access Control</h6>            
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 text-md-end">
+            <button class="btn btn-sm btn-dark" (click)="isView=false">
+                Enable login for a page
+              </button>
+        </div>  
+                     
+    </div>
+    <hr>   
+    <div class="d-flex flex-column flex-md-row h-sm-full bg-surface-secondary">
+        <nav class="navbar show navbar-vertical navbar-expand-lg px-0 py-3 navbar-light border-bottom border-bottom-lg-0 border-end-lg-0 bg-surface-secondary" id="navbarVertical"
+        style="height: 200px;">
+            <div class="container-fluid">              
+              <div class="navbar-collapse" id="sidebarCollapse">
+                <ul class="navbar-nav inner-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                      Access Control </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      Site Settings </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                       SEO </a>
+                  </li>
+                </ul>
+                <div class="mt-auto"></div>
+              </div>
+            </div>
+          </nav>
+        <div class="h-screen flex-grow-1 px-md-5">
+          <main class="py-6 bg-surface-secondary" *ngIf="isView">
+            <div class="max-w-screen-md vstack gap-6">
+
+                <div class="card shadow-4-hover" >
+                    <div class="card-body">                  
+                        <div class="row g-5">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <h6>Default:Art Station Online</h6>
+                                        <div class="mt-sm-1 d-flex align-items-center">
+                                            <a class="text-sm text-heading text-primary-hover">https://mydomain.com</a>
+                                            <span class="material-symbols-outlined text-muted text-lg">
+                                                content_copy
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="ms-auto" >
+                                        <div class="icon icon-shape rounded-circle">
+                                            <span class="material-symbols-outlined">
+                                                lock
+                                                </span>
+                                        </div> 
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-4-hover">
+                    <div class="card-body">                  
+                        <div class="row g-5">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <h6>Morning Batch - 123456</h6>
+                                        <div class="mt-sm-1 d-flex align-items-center">
+                                            <a class="text-sm text-heading text-primary-hover">https://mydomain.com</a>
+                                            <span class="material-symbols-outlined text-muted text-lg">
+                                                content_copy
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="ms-auto" >                                        
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </main>
+
+          <main class="py-6 px-1 bg-white card mt-6" *ngIf="!isView">
+            <div class="row card-body">
+                <h5 class="mb-6">Morning batch 08:30 AM -  09:30 AM</h5>
+                <div class="col-12 ">
+                    <form>                        
+                        <div class="mb-5">
+                          <label class="form-label" for="password">Page link</label>
+                          <div class="input-group position-relative">
+                            <input type="text" class="form-control" aria-label="Choose email" aria-describedby=""
+                            value="https://endlessi.notion.site/If-you-want-to-go-fast-go-alone-If-you-want-to-go-far-go-together-b05b51ed35144b708e31da8e5a36d84c" disabled>
+                            <span class="input-group-text" id="">
+                                <i class="material-symbols-outlined">
+                                    content_copy
+                                </i>
+                            </span>
+                          </div>
+                        </div>
+                        <!-- <div class="mb-5">
+                            <label class="form-label" for="title">Page Title</label>
+                            <input type="text" class="form-control" id="title" placeholder="">
+                        </div> -->
+                        <div class="mb-5">
+                            <label class="form-label" for="title">Should users log in to access the page?</label>
+                            <select class="form-select" [(ngModel)]="loginOption" [ngModelOptions]="{standalone: true}">
+                                <option value="NOT REQUIRED">Login not required. Anyone can access the page.</option>
+                                <option value="USERNAME">Yes, by providing a username.</option>
+                                <option value="PASSWORD">Yes, by providing a password.</option>
+                                <option value="COMBINATION">Yes, by providing a username and password combination.</option>
+                            </select>                            
+                        </div>
+
+                        <div class="row" *ngIf="loginOption=='USERNAME'">
+                            <div class="col-12 col-sm-12 col-md-8 mb-5 mb-sm-5">
+                                <label class="form-label" for="username">Username</label>
+                                <input type="text" class="form-control input-sm" id="username" placeholder="">
+                            </div>
+                            <div class="col-4 col-md-1 col-sm-4 text-md-center px-5 mb-5 mb-sm-5">
+                                <label class="form-label" for="flexSwitchCheckChecked">Active?</label>                                    
+                                <div class="form-check form-switch mt-3 mb-2">                                                           
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>                                    
+                                  </div>
+                            </div>
+                            <div class="col-8 col-md-3 col-sm-8 pt-8 text-end mb-5 mb-sm-5">                                                                
+                                <a href="#" class="btn d-inline-flex btn-md btn-neutral me-1">
+                                    <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                </a>
+                                <a href="#" class="btn d-inline-flex btn-md btn-neutral">
+                                    <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                </a>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row" *ngIf="loginOption=='PASSWORD'">
+                            <div class="col-12 col-sm-12 col-md-8 mb-5 mb-sm-5">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" class="form-control input-sm" id="password" placeholder="">
+                            </div>
+                            <div class="col-4 col-md-1 col-sm-4 text-md-center px-5 mb-5 mb-sm-5">
+                                <label class="form-label" for="flexSwitchCheckChecked">Active?</label>                                    
+                                <div class="form-check form-switch mt-3 mb-2">                                                           
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>                                    
+                                  </div>
+                            </div>
+                            <div class="col-8 col-md-3 col-sm-8 pt-8 text-end mb-5 mb-sm-5">                                                                
+                                <a href="#" class="btn d-inline-flex btn-md btn-neutral me-1">
+                                    <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                </a>
+                                <a href="#" class="btn d-inline-flex btn-md btn-neutral">
+                                    <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                </a>
+                            </div>
+                            <hr>
+                        </div>
+
+                        <div class="row" *ngIf="loginOption=='COMBINATION'">
+                            <div class="col-12 mb-5">
+                                <div class="form-check form-switch">                                    
+                                    <label class="form-check-label" for="enableChecked">Enable same password for all usernames</label>
+                                    <input class="form-check-input" type="checkbox" id="enableChecked" [(ngModel)]="isSamePasswordforallUser" [ngModelOptions]="{standalone: true}">
+                                </div>
+                            </div>
+                            <div class="row" *ngIf="isSamePasswordforallUser">
+                                <div class="col-12 mb-5">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="">
+                                </div>
+                                <div class="col-12 col-md-8 col-sm-12 mb-5 mb-sm-5">
+                                    <label class="form-label" for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="">
+                                </div>
+                                <div class="col-4 col-md-1 col-sm-4 text-md-center px-5 mb-5 mb-sm-5">
+                                    <label class="form-label" for="flexSwitchCheckChecked">Active?</label>                                    
+                                    <div class="form-check form-switch mt-3 mb-2">                                                           
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>                                    
+                                      </div>
+                                </div>
+                                <div class="col-8 col-md-3 col-sm-8 pt-8 text-end mb-5 mb-sm-5">                                                                
+                                    <a href="#" class="btn d-inline-flex btn-md btn-neutral me-1">
+                                        <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                    </a>
+                                    <a href="#" class="btn d-inline-flex btn-md btn-neutral">
+                                        <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                    </a>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="row" *ngIf="!isSamePasswordforallUser">
+                                <div class="col-12 col-sm-12 col-md-4 mb-5 mb-sm-5">
+                                    <label class="form-label" for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" placeholder="">
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-4 mb-5 mb-sm-5">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="">
+                                </div>
+                                <div class="col-4 col-md-1 col-sm-4 text-md-center px-5 mb-5 mb-sm-5">
+                                    <label class="form-label" for="flexSwitchCheckChecked">Active?</label>                                    
+                                    <div class="form-check form-switch mt-3 mb-2">                                                           
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>                                    
+                                      </div>
+                                </div>
+                                <div class="col-8 col-md-3 col-sm-8 pt-8 text-end mb-5 mb-sm-5">                                                                
+                                    <a href="#" class="btn d-inline-flex btn-md btn-neutral me-1">
+                                        <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                    </a>
+                                    <a href="#" class="btn d-inline-flex btn-md btn-neutral">
+                                        <span class=""><i class="bi bi-plus-lg"></i> </span>                                 
+                                    </a>
+                                </div>
+                                <hr>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row mt-5">
+                            <div class="col-4">
+                                <a href="#" class="btn d-inline-flex btn-sm btn-neutral text-danger">
+                                    <span class="pe-2"><i class="bi bi-trash"></i> </span>
+                                    <span>Delete</span>
+                                </a>
+                            </div>
+                            <div class="col-8 text-end">
+                                <button class="btn btn-sm btn-neutral me-2" style="margin-right:5px;" (click)="isView=true">
+                                    Cancel
+                                  </button>
+                                <button class="btn btn-sm btn-dark" >
+                                    Save
+                                  </button>
+                            </div>
+                        </div>
+
+                      </form>
+                </div>
+            </div>            
+          </main>
+        </div>
+      </div>
+  
+  </div>
